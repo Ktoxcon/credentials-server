@@ -1,5 +1,6 @@
-const express = require("express");
 const cors = require("cors");
+const express = require("express");
+const getCredentials = require("./credentials");
 const validateRole = require("./role-validator");
 
 const app = express();
@@ -24,7 +25,8 @@ app.post("/api", (req, res) => {
     res.status(401).send({ email: "", password: "" });
     res.end();
   } else {
-    res.send({ email: "sus", password: "sus" });
+    const credentials = getCredentials();
+    res.send({ ...credentials });
   }
 });
 
