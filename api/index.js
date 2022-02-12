@@ -29,6 +29,4 @@ app.get("/api", (req, res) => {
   }
 });
 
-app.listen(80, () => {
-  console.log("Server Running");
-});
+module.exports = app;
