@@ -13,8 +13,7 @@ app.post("/api", (req, res) => {
 
   if (!role) {
     res.status(401).send({
-      email: "",
-      password: "",
+      error: `Expected role, got ${role}`,
     });
     res.end();
   }
