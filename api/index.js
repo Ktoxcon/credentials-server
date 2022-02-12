@@ -8,7 +8,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
 
-app.get("/credentials/api", (req, res) => {
+app.get("/api", (req, res) => {
   const { role } = req.body;
 
   if (!role) {
